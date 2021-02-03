@@ -1,0 +1,31 @@
+---
+title: "gradethis_test2"
+author: "Kimchi"
+date: "19/01/2021"
+output: 
+  learnr::tutorial:
+    progressive: true
+    allow_skip: true
+runtime: shiny_prerendered
+description: "this docuement contains the right setup chunk needed for gradethis to work."
+---
+
+
+```{r setup, include=FALSE}
+library(learnr)
+library(gradethis)
+tutorial_options(exercise.checker= gradethis::grade_learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Here is how an example exercise and `-check` chunk would appear in a learnr document.
+
+```{r exercise_1, exercise = TRUE}
+x + 1
+```
+
+```{r exercise_1-check}
+grade_result(
+  pass_if(~ identical(.result, 2), "Good job!")
+)
+```
