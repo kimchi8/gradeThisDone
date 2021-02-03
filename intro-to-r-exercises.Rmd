@@ -1,0 +1,85 @@
+---
+title: "getting-started"
+author: "Kimchi"
+date: "21/01/2021"
+output: 
+  learnr::tutorial:
+    progressive: true
+    allow_skip: true
+runtime: shiny_prerendered
+description: "this document contains the right setup chunk needed for gradethis to work. This file also contains some examples from the getting started (intro to R) section of the LADAR website"
+---
+
+
+```{r setup, include=FALSE}
+library(learnr)
+library(gradethis)
+tutorial_options(
+  exercise.checker = gradethis::grade_learnr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+#### **<span style="color: orange;">Exercise</span>** {-}
+
+You can use R like a calculator.  Try typing `2+8` into the **R console**.
+```{r exercise_1, exercise = TRUE}
+
+```
+
+
+```{r exercise_1-check}
+grade_result(
+  pass_if(~ identical(.result, 10))
+  )
+```
+
+```{r exercise_1-hint-1}
+x + y = 10
+what is x and y? 
+```
+
+<!-- need answer/reformatting -->
+#### Exercise Time! {-}
+
+Download and inspect the first 7 rows of the data set that you can find under this URL: `https://slcladal.github.io/data/lmemdata.txt`. Can you guess what the data is about?
+
+```{r, echo = F, eval = F}
+ex1data <- read.delim("https://slcladal.github.io/data/lmemdata.txt", 
+                      sep = "\t", header = T)
+head(ex1data, 7)
+```
+
+#### **<span style="color: orange;">Exercise</span>** {-}
+
+How would you inspect the content of the cells in 4^th^ column, rows 3 to 5 of the `icebio` data set?
+
+
+```{r exercise_2, exercise = TRUE}
+icebio <- read.delim("https://slcladal.github.io/data/BiodataIceIreland.txt", 
+                      sep = "\t", header = T)
+
+
+<write code here>
+```
+
+
+```{r exercise_2-hint-1}
+icebio[ , ]
+
+```
+
+```{r exercise_2-hint-2}
+icebio[x:y, z]
+what is x,y and z?
+```
+
+```{r exercise_2-solution,  exercise.reveal_solution = FALSE}
+icebio <- read.delim("https://slcladal.github.io/data/BiodataIceIreland.txt", 
+                      sep = "\t", header = T)
+icebio[3:5, 4]
+```
+
+```{r exercise_2-check}
+grade_code("Don't worry, things will soon get harder.")
+```
+
