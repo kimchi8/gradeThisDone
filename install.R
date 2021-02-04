@@ -1,6 +1,4 @@
 install.packages("learnr")
-install.packages("here")
-install.packages("tidyverse")
 install.packages("devtools")
 install.packages("dplyr")
 remotes::install_github("rstudio-education/gradethis")
